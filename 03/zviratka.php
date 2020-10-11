@@ -11,13 +11,20 @@
 
 $den = "pondělí";
 
-// $nakrmitZviratka = ...;
+$nakrmitZviratka = [];
+$nakrmitZviratka[] = "kočka";
+
+if ($den == "pondělí") {
+    $nakrmitZviratka[] = "had";
+}
 
 echo "<pre>";
 var_dump($nakrmitZviratka); // Vypíše kočku i hada, pokud je pondělí, jinak pouze kočku.
 echo "</pre>";
 
 // Kočka nám utekla, tak jsme si pořídili psa. Přepište první prvek v poli.
+
+$nakrmitZviratka[0] = "pes";
 
 echo "<pre>";
 var_dump($nakrmitZviratka); // Vypíše psa i hada, pokud je pondělí, jinak pouze psa.
