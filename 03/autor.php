@@ -8,9 +8,17 @@
 // Vypište podle počtu zhlédnutí větu "Emilka je oblíbená autorka" nebo "Emilka je neoblíbená autorka"
 
 $autorka = [
-    // ...
+    "jmeno" => "Emilka",
+    "pocetZhlednuti" => 300,
+    "hodnoceni" => "",
 ];
 
-echo "DOPLŇTE_KDO je DOPLŇTE_JAKÁ autorka";
+if ($autorka["pocetZhlednuti"] < 50) {
+    $autorka["hodnoceni"] = "neoblíbená";
+} else {
+    $autorka["hodnoceni"] = "oblíbená";
+}
+
+echo $autorka["jmeno"] . " je " . $autorka["hodnoceni"] . " autorka";
 
 ?>
