@@ -6,22 +6,20 @@ $nazevBlogu = "Blog Czechitas";
 // Proměnné nahraďte dvourozměrným polem jako v komentáři níže.
 // Ve výpisu pak nahraďte původní proměnné výpisem tohoto pole a původní proměnné smažte.
 
-$clanek1_nazev = "Úvod do PHP";
-$clanek1_autor = "Honza";
-
-$clanek2_nazev = "Proměnné a podmínky";
-$clanek2_autor = "Martin";
-
-$clanek3_nazev = "Pole";
-$clanek3_autor = "Markéta";
-
-// $clanky = [
-//     [
-//         "nazev" => "Úvod do PHP",
-//         "autor" => "Honza",
-//     ],
-//     ...
-// ];
+$clanky = [
+    [
+        "nazev" => "Úvod do PHP",
+        "autor" => "Honza",
+    ],
+    [
+        "nazev" => "Proměnné a podmínky",
+        "autor" => "Martin",
+    ],
+    [
+        "nazev" => "Pole",
+        "autor" => "Markéta",
+    ],
+];
 
 ?>
 
@@ -45,18 +43,18 @@ $clanek3_autor = "Markéta";
         <ul class="list-unstyled">
 
             <li class="jumbotron pt-2 pb-2 mt-3 mb-1">
-                <strong><?php echo $clanek1_nazev ?></strong>,<!-- tady nahradit -->
-                <?php echo $clanek1_autor ?><!-- tady nahradit -->
+                <strong><?php echo $clanky[0]["nazev"] ?></strong>,<!-- tady nahradit -->
+                <?php echo $clanky[0]["autor"] ?><!-- tady nahradit -->
             </li>
 
             <li class="jumbotron pt-2 pb-2 mt-3 mb-1">
-                <strong><?php echo $clanek2_nazev ?></strong>,<!-- tady nahradit -->
-                <?php echo $clanek2_autor ?><!-- tady nahradit -->
+                <strong><?php echo $clanky[1]["nazev"] ?></strong>,<!-- tady nahradit -->
+                <?php echo $clanky[1]["autor"] ?><!-- tady nahradit -->
             </li>
 
             <li class="jumbotron pt-2 pb-2 mt-3 mb-1">
-                <strong><?php echo $clanek3_nazev ?></strong>,<!-- tady nahradit -->
-                <?php echo $clanek3_autor ?><!-- tady nahradit -->
+                <strong><?php echo $clanky[2]["nazev"] ?></strong>,<!-- tady nahradit -->
+                <?php echo $clanky[2]["autor"] ?><!-- tady nahradit -->
             </li>
 
         </ul>
