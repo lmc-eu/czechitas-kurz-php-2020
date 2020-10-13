@@ -4,7 +4,7 @@
 $nazevBlogu = "Blog Czechitas";
 
 // --- POČET ZOBRAZENÍ BLOGU ---
-$pocetZobrazeni = 2;
+$pocetZobrazeni = 11;
 $pocetZobrazeniText = "Jsi první, kdo si tuto stránku prohlíží";
 
 if ($pocetZobrazeni == 1) {
@@ -13,6 +13,12 @@ if ($pocetZobrazeni == 1) {
     $pocetZobrazeniText = "Před tebou tu byli " . $pocetZobrazeni . " návštěvníci";
 } elseif ($pocetZobrazeni >= 5) {
     $pocetZobrazeniText = "Před tebou tu bylo " . $pocetZobrazeni . " návštěvníků";
+}
+
+$barva = "gray";
+
+if ($pocetZobrazeni > 10) {
+    $barva = "green";
 }
 
 ?>
@@ -27,5 +33,5 @@ if ($pocetZobrazeni == 1) {
 </head>
 <body>
     <h1><?php echo $nazevBlogu; ?></h1>
-    <p><?php echo $pocetZobrazeniText; ?></p>
+    <p style="color: <?php echo $barva ?>;"><?php echo $pocetZobrazeniText; ?></p>
 </body>
