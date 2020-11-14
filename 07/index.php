@@ -15,12 +15,6 @@ require 'header.php';
             <span class="small"><?php echo $clanek['autor'] ?></span>
             <p>
             <?php
-                // echo mb_substr($clanek['obsah'], 0, 100);
-
-                // if (mb_strlen($clanek['obsah']) > 100) {
-                //     echo " ...";
-                // }
-
                 $odrazky = explode("<br />", $clanek['obsah']);
                 echo $odrazky[0] . " ...";
             ?>
@@ -32,5 +26,7 @@ require 'header.php';
 
 <?php date_default_timezone_set('Europe/Prague'); ?>
 <p class="text-muted mt-4 mb-1 text-center">Stránka vygenerována <?php echo date('d. m. Y, h:i:s'); ?></p>
+
+<p class="text-muted mt-1 mb-4 text-center">Počet zobrazení stránky: <?php echo $pocetZobrazeniStranky ?></p>
 
 <?php require 'footer.php'; ?>

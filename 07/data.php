@@ -28,3 +28,12 @@ $clanky = [
         <em>Např. články na blogu, lektoři kurzu...</em>",
     ]
 ];
+
+$filename = 'pocitadlo.txt';
+
+if (file_exists($filename) == false) {
+    file_put_contents($filename, '1');
+}
+
+$pocetZobrazeniStranky = file_get_contents($filename);
+file_put_contents($filename, $pocetZobrazeniStranky + 1);
