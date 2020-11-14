@@ -3,7 +3,7 @@ require 'data.php';
 require 'header.php';
 ?>
 
-<p class="text-muted mt-4 mb-4">Počet článků na blogu: __DOPLŇTE___</p>
+<p class="text-muted mt-4 mb-4">Počet článků na blogu: <?php echo count($clanky); ?></p>
 
 <!-- výpis článků -->
 <ul class="list-unstyled">
@@ -18,6 +18,6 @@ require 'header.php';
 </ul>
 
 <?php date_default_timezone_set('Europe/Prague'); ?>
-<p class="text-muted mt-4 mb-4 text-center">Stránka vygenerována __DOPLŇTE___</p>
+<p class="text-muted mt-4 mb-1 text-center">Stránka vygenerována <?php echo date('d. m. Y, h:i:s'); ?></p>
 
 <?php require 'footer.php'; ?>
