@@ -19,6 +19,8 @@ $clanek = [
     "obsah" => $_POST["obsah"],
 ];
 
-echo "<pre>";
-var_dump($clanek);
-echo "</pre>";
+$clanky[] = $clanek;
+$clankyProUlozeni = base64_encode(serialize($clanky));
+file_put_contents("clanky.txt", $clankyProUlozeni);
+
+Header("Location: index.php");
