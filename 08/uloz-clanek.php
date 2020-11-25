@@ -19,6 +19,7 @@ $clanek = [
     "obsah" => $_POST["obsah"],
 ];
 
+$clanky = unserialize(base64_decode(file_get_contents("clanky.txt")));
 $clanky[] = $clanek;
 $clankyProUlozeni = base64_encode(serialize($clanky));
 file_put_contents("clanky.txt", $clankyProUlozeni);
