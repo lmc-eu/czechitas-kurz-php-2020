@@ -3,7 +3,7 @@ require 'data.php';
 require 'header.php';
 ?>
 
-<form action="uloz-clanek.php" method="GET">
+<form action="uloz-clanek.php" method="POST">
   <div class="form-group">
     <label for="nazev">Název</label>
     <input type="text" name="nazev" class="form-control" id="nazev" placeholder="Nadpis">

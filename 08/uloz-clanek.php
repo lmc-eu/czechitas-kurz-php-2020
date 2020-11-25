@@ -1,4 +1,24 @@
 <?php
-    echo "<pre>";
-    var_dump($_GET);
-    echo "</pre>";
+if (empty($_POST["nazev"])) {
+    die("Chybí název!");
+}
+if (empty($_POST["autor"])) {
+    die("Chybí autor!");
+}
+if (empty($_POST["datum"])) {
+    die("Chybí datum!");
+}
+if (empty($_POST["obsah"])) {
+    die("Chybí obsah!");
+}
+
+$clanek = [
+    "nazev" => $_POST["nazev"],
+    "autor" => $_POST["autor"],
+    "datum" => $_POST["datum"],
+    "obsah" => $_POST["obsah"],
+];
+
+echo "<pre>";
+var_dump($clanek);
+echo "</pre>";
