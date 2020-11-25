@@ -1,4 +1,5 @@
 <?php 
+require 'funkce.php';
 require 'data.php';
 require 'header.php';
 ?>
@@ -16,7 +17,7 @@ require 'header.php';
             <p>
             <?php
                 $odrazky = explode("<br />", $clanek['obsah']);
-                echo $odrazky[0] . " ...";
+                echo pridejTagClanek($odrazky[0]) . " ...";
             ?>
             </p>
         </li>
