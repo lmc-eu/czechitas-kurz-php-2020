@@ -20,7 +20,13 @@ $clanek = [
 ];
 
 $clanky = unserialize(base64_decode(file_get_contents("clanky.txt")));
-$clanky[] = $clanek;
+
+if ($_POST["id"] != "") {
+    $clanky[$_POST["id"]] = $clanek;
+} else {
+    $clanky[] = $clanek;
+}
+
 $clankyProUlozeni = base64_encode(serialize($clanky));
 file_put_contents("clanky.txt", $clankyProUlozeni);
 
