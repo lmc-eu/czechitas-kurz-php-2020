@@ -1,11 +1,11 @@
-<?php 
+<?php session_start();
 require 'funkce.php';
 require 'data.php';
 require 'header.php';
 ?>
 
 <p class="float-right mb-2"><a href="pridat-clanek.php" class="btn btn-primary btn-sm">Nový článek</a></p>
-<p class="text-muted mt-4 mb-4">Počet článků na blogu: <?php echo count($clanky); ?></p>
+<p class="text-muted mt-4 mb-4">Vítej na blogu: <?php echo $_SESSION["jmeno"] ?> (<a href="jmeno.php">změnit jméno</a>)</p><p class="text-muted mt-4 mb-4">Počet článků na blogu: <?php echo count($clanky); ?></p>
 
 <!-- výpis článků -->
 <ul class="list-unstyled">
