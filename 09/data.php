@@ -3,6 +3,7 @@ $nazevBlogu = "Blog Czechitas";
 
 $clanky = unserialize(base64_decode(file_get_contents("clanky.txt")));
 
+// Odsud az na konec souboru to chceme nahradit s pouzitim session
 $filename = 'pocitadlo.txt';
 
 if (file_exists($filename) == false) {
