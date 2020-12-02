@@ -6,7 +6,9 @@ require 'header.php';
 
 <p class="float-right mb-2"><a href="pridat-clanek.php" class="btn btn-primary btn-sm">Nový článek</a></p>
 <p class="text-muted mt-4 mb-4"><!-- sem doplnime informaci o poctu shlednuti --></p>
+<?php if (isset($_SESSION['jmeno'])) { ?>
 <p class="text-muted mt-4 mb-4">Vítej na blogu: <?php echo $_SESSION["jmeno"] ?> (<a href="jmeno.php">změnit jméno</a>)</p><p class="text-muted mt-4 mb-4">Počet článků na blogu: <?php echo count($clanky); ?></p>
+<?php } ?>
 
 <!-- výpis článků -->
 <ul class="list-unstyled">
