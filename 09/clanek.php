@@ -23,7 +23,6 @@ $clanek = $clanky[$id];
     <p><?php echo $clanek['obsah']; ?></p>
     <p class="small">Autor: <?php echo $clanek['autor']; ?></p>
     <p class="float-right"><a class="btn btn-sm btn-info" href="./pridat-clanek.php?id=<?php echo $id ?>">editovat</a></p>
-    <p class="float-right"><a class="btn btn-sm btn-danger" href="./smazat-clanek.php?id=<?php echo $id ?>">smazat</a></p>
     <br />
 </div>
 
