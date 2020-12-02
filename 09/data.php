@@ -10,3 +10,22 @@ if (!isset($_SESSION["zhlednuti"])) {
 }
 
 $pocetShlednutiStranky = $_SESSION["zhlednuti"];
+
+function existujeUzivatel($jmeno, $heslo) {
+    $admini = [
+        ["jmeno" => "lukas", "heslo" => "123456"],
+    ];
+
+    // kontrola prihlaseni
+    foreach ($admini as $admin) {
+        if ($admin['jmeno'] == $jmeno && $admin['heslo'] == $heslo) {
+            $_SESSION['uzivatel'] = [
+                "jmeno" => $jmeno,
+            ];
+
+            return true;
+        }
+    }
+
+    return false;
+}

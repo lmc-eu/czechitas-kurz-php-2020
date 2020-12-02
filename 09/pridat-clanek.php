@@ -20,6 +20,10 @@ if (isset($_GET["id"])) {
   $textTlacitko = "Upravit článek";
 }
 
+if (!isset($_SESSION["uzivatel"])) {
+  header("Location: prihlaseni.php");
+}
+
 ?>
 
 <form action="uloz-clanek.php" method="POST">
