@@ -11,3 +11,7 @@ if (file_exists($filename) == false) {
 
 $pocetZobrazeniStranky = file_get_contents($filename);
 file_put_contents($filename, $pocetZobrazeniStranky + 1);
+
+$uzivatele = [
+    ["jmeno" => "", "heslo" => ""]
+];
