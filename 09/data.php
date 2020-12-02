@@ -19,13 +19,13 @@ function existujeUzivatel($jmeno, $heslo) {
     // kontrola prihlaseni
     foreach ($admini as $admin) {
         if ($admin['jmeno'] == $jmeno && $admin['heslo'] == $heslo) {
-            $_SESSION['uzivatel'] = [
-                "jmeno" => $jmeno,
-            ];
-
             return true;
         }
     }
 
     return false;
+}
+
+function jeUzivatelPrihlasen() {
+    return isset($_SESSION["uzivatel"]);
 }
