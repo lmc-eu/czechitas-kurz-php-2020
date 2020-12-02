@@ -26,3 +26,7 @@ require 'header.php';
     <?php } ?>
 
 </ul>
+
+<?php
+require "footer.php";
+?>
