@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 /*
 1. pokud dostanu id, které neexistuje, zobrazit chybu "Požadovaná stránka neexistuje"
 2. na konec článku přidejte odkazy na "předchozí" a "další článek" (experti: odkazy jsou aktivní pouze, pokud takový článek existuje)
@@ -9,10 +9,12 @@ require 'data.php';
 require 'header.php';
 
 // načtení ID a přetypování
-$id = (int) $_GET['id'];
+$id = (int) $_GET["id"];
 
 // získání článku
 $clanek = $clanky[$id];
+
+$_SESSION["navstiveno"][$_GET["id"]] = $clanek["nazev"];
 ?>
 
 <!-- konkrétní článek -->
