@@ -1,7 +1,5 @@
-<?php session_start();
-
+<?php 
 require "header.php";
-
 ?>
 <style>
   html,
@@ -50,16 +48,11 @@ require "header.php";
   }
 </style>
 
-<?php
-  if (isset($_GET["stav"]) && $_GET["stav"] == "error") {
-?>
+<?php if( $_GET['stav'] == "error") { ?>
     <div class="alert alert-danger" role="alert">
-        Nepodařilo se přihlásit, zkontrolujte jméno a heslo
+            Nepodařilo se přihlásit, zkontrolujte jméno a heslo
     </div>
-<?php
-  }
-
-?>
+<?php } ?>
 
 <form class="form-signin" action="prihlas-me.php" method="POST">
     <h1 class="h3 mb-3 font-weight-normal">Přihlašte se</h1>
@@ -72,4 +65,5 @@ require "header.php";
 
 <?php
 require "footer.php";
+
 ?>

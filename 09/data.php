@@ -1,31 +1,31 @@
 <?php session_start();
+
+
 $nazevBlogu = "Blog Czechitas";
 
 $clanky = unserialize(base64_decode(file_get_contents("clanky.txt")));
 
-if (!isset($_SESSION["zhlednuti"])) {
-    $_SESSION["zhlednuti"] = 1;
-} else {
-    $_SESSION["zhlednuti"] = $_SESSION["zhlednuti"] + 1;
+$filename = 'pocitadlo.txt';
+
+if (file_exists($filename) == false) {
+    file_put_contents($filename, '1');
 }
 
-$pocetShlednutiStranky = $_SESSION["zhlednuti"];
+$pocetZobrazeniStranky = file_get_contents($filename);
+file_put_contents($filename, $pocetZobrazeniStranky + 1);
+
 
 function existujeUzivatel($jmeno, $heslo) {
-    $admini = [
+    $uzivatele = [
         ["jmeno" => "lukas", "heslo" => "123456"],
+        ["jmeno" => "jan", "heslo" => "1234"]
     ];
 
-    // kontrola prihlaseni
-    foreach ($admini as $admin) {
-        if ($admin['jmeno'] == $jmeno && $admin['heslo'] == $heslo) {
+    foreach ($uzivatele as $uzivatel) {
+        if ($uzivatel['jmeno'] == $jmeno && $uzivatel['heslo'] == $heslo) {
             return true;
         }
     }
 
     return false;
-}
-
-function jeUzivatelPrihlasen() {
-    return isset($_SESSION["uzivatel"]);
 }

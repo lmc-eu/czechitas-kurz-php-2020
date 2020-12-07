@@ -12,6 +12,7 @@ if (empty($_POST["obsah"])) {
     die("Chybí obsah!");
 }
 
+
 $clanek = [
     "nazev" => $_POST["nazev"],
     "autor" => $_POST["autor"],
@@ -21,7 +22,7 @@ $clanek = [
 
 $clanky = unserialize(base64_decode(file_get_contents("clanky.txt")));
 
-if ($_POST["id"] != "") {
+if (isset($_POST["id"]) && $_POST["id"] != "") {
     $clanky[$_POST["id"]] = $clanek;
 } else {
     $clanky[] = $clanek;

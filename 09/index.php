@@ -1,36 +1,19 @@
-<?php session_start();
+<?php 
+require 'data.php'; 
 require 'funkce.php';
-require 'data.php';
 require 'header.php';
-
-
-$stav = $_GET["stav"];
-$zobrazitHlasku = false;
-$hlaska = "";
-
-if ($stav == "prihlasen") {
-  $zobrazitHlasku = true;
-  $hlaska = "Přihlášení proběhlo úspěšně";
-} else if ($stav == "odhlasen") {
-    $zobrazitHlasku = true;
-    $hlaska = "Odhlášní proběhlo úspěšně";
-}
-
 ?>
-<?php if($zobrazitHlasku) { ?>
-<div class="alert alert-info" role="alert">
-  <?php echo $hlaska ?>
-</div>
-<?php } ?>
 
-<?php if (isset($_SESSION["uzivatel"])) { ?>
-  <p class="float-right mb-2"><a href="pridat-clanek.php" class="btn btn-primary btn-sm">Nový článek</a><a href="odhlasit.php" class="btn btn-danger btn-sm">Odhlásit</a></p>
-  <p class="text-muted mt-4 mb-4">Vítej na blogu: <?php echo $_SESSION["uzivatel"]["jmeno"] ?></p><p class="text-muted mt-4 mb-4">Počet článků na blogu: <?php echo count($clanky); ?></p>
-<?php } else { ?>
-  <a href="prihlaseni.php" class="btn btn-info">Přihlásit</a>
-<?php } ?>
 
-<p class="text-muted mt-4 mb-4">Tuto stranku uz jste navstivili <?php echo $pocetShlednutiStranky ?>krat</p>
+<?php if( $_GET['stav'] == "prihlasen") { ?>
+    <div class="alert alert-info" role="alert">
+            Uspesne prihlasen
+    </div>
+<?php } ?>
+<a href="prihlaseni.php" class="btn btn-info">Přihlásit</a>
+<p class="float-right mb-2"><a href="pridat-clanek.php" class="btn btn-primary btn-sm">Nový článek</a></p>
+<p class="text-muted mt-4 mb-4">Vítej na blogu: <?php echo $_SESSION['uzivatel']['jmeno']; ?></p>
+<p class="text-muted mt-4 mb-4">Počet článků na blogu: <?php echo count($clanky); ?></p>
 
 <!-- výpis článků -->
 <ul class="list-unstyled">

@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 /*
 1. pokud dostanu id, které neexistuje, zobrazit chybu "Požadovaná stránka neexistuje"
 2. na konec článku přidejte odkazy na "předchozí" a "další článek" (experti: odkazy jsou aktivní pouze, pokud takový článek existuje)
@@ -13,28 +13,18 @@ $id = (int) $_GET['id'];
 
 // získání článku
 $clanek = $clanky[$id];
-
-if (!isset($_SESSION["zhlednuti".$id])) {
-    $_SESSION["zhlednuti".$id] = 1;
-} else {
-    $_SESSION["zhlednuti".$id]++;
-}
-
 ?>
 
 <!-- konkrétní článek -->
 <div class="jumbotron p-4 mt-3 mb-1">
-    <p class="text-muted mt-4 mb-4">Tento clanek jste jiz videli <?php echo $_SESSION["zhlednuti".$id]; ?></p>
     <p class="float-right"><a href="./index.php">&#8678; zpět</a></p>
     <h1><?php echo $clanek['nazev']; ?></h1>
     <p class="small"><?php echo $clanek['datum']; ?></p>
     <p><?php echo $clanek['obsah']; ?></p>
     <p class="small">Autor: <?php echo $clanek['autor']; ?></p>
-  <?php if (isset($_SESSION["uzivatel"])) {?>
     <p class="float-right"><a class="btn btn-sm btn-info" href="./pridat-clanek.php?id=<?php echo $id ?>">editovat</a></p>
     <p class="float-right"><a class="btn btn-sm btn-danger" href="./smazat-clanek.php?id=<?php echo $id ?>">smazat</a></p>
     <br />
-  <?php } ?>
 </div>
 
 <?php require 'footer.php'; ?>
