@@ -17,7 +17,7 @@ if (empty($_POST["obsah"])) {
     die("Chybí obsah!");
 }
 
-
+// pokud bychom data ukládali do DB, bylo by potřeba je ošetřit
 $clanek = [
     "nazev" => $_POST["nazev"],
     "autor" => $_POST["autor"],
@@ -28,7 +28,7 @@ $clanek = [
 $clanky = unserialize(base64_decode(file_get_contents("clanky.txt")));
 
 if (isset($_POST["id"]) && $_POST["id"] != "") {
-    $clanky[$_POST["id"]] = $clanek;
+    $clanky[(int)$_POST["id"]] = $clanek;
 } else {
     $clanky[] = $clanek;
 }

@@ -16,7 +16,7 @@ if (!isset($clanky[$id])) {
 $clanek = $clanky[$id];
 
 // zapamatování návštěvy tohoto článku
-$_SESSION["navstiveno"][$id] = $clanek['nazev'];
+$_SESSION["navstiveno"][$id] = htmlspecialchars($clanek['nazev']);
 ?>
 
 <?php if (isset($_SESSION['uzivatel'])) { ?>
@@ -29,10 +29,10 @@ $_SESSION["navstiveno"][$id] = $clanek['nazev'];
 <!-- konkrétní článek -->
 <div class="jumbotron p-4 mt-3 mb-1">
     <p class="float-right"><a href="./index.php">&#8678; zpět</a></p>
-    <h1><?php echo $clanek['nazev']; ?></h1>
-    <p class="small"><?php echo $clanek['datum']; ?></p>
-    <p><?php echo nl2br($clanek['obsah']); ?></p>
-    <p class="small">Autor: <?php echo $clanek['autor']; ?></p>
+    <h1><?php echo htmlspecialchars($clanek['nazev']); ?></h1>
+    <p class="small"><?php echo htmlspecialchars($clanek['datum']); ?></p>
+    <p><?php echo nl2br(htmlspecialchars($clanek['obsah'])); ?></p>
+    <p class="small">Autor: <?php echo htmlspecialchars($clanek['autor']); ?></p>
 </div>
 
 <?php require 'footer.php'; ?>

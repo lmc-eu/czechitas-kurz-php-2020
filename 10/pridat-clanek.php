@@ -43,19 +43,19 @@ if (isset($_GET["id"])) {
     <form action="uloz-clanek.php" method="POST">
         <div class="form-group">
             <label for="nazev">Název</label>
-            <input type="text" name="nazev" class="form-control" id="nazev" placeholder="Nadpis" value="<?php echo $clanek["nazev"] ?>">
+            <input type="text" name="nazev" class="form-control" id="nazev" placeholder="Nadpis" value="<?php echo htmlspecialchars($clanek["nazev"]); ?>">
         </div>
         <div class="form-group">
             <label for="autor">Autor</label>
-            <input type="text" name="autor" class="form-control" id="autor" placeholder="Jméno autora"  value="<?php echo $clanek["autor"] ?>">
+            <input type="text" name="autor" class="form-control" id="autor" placeholder="Jméno autora"  value="<?php echo htmlspecialchars($clanek["autor"]); ?>">
         </div>
         <div class="form-group">
             <label for="datum">Datum</label>
-            <input type="date" name="datum" class="form-control" id="datum"  value="<?php echo $clanek["datum"] ?>">
+            <input type="date" name="datum" class="form-control" id="datum"  value="<?php echo htmlspecialchars($clanek["datum"]); ?>">
         </div>
         <div class="form-group">
             <label for="obsah">Obsah</label>
-            <textarea name="obsah" class="form-control" id="obsah" rows="6"><?php echo $clanek["obsah"] ?></textarea>
+            <textarea name="obsah" class="form-control" id="obsah" rows="6"><?php echo htmlspecialchars($clanek["obsah"]); ?></textarea>
         </div>
 
         <input type="hidden" name="id"  value="<?php echo $clanek["id"] ?>" />
