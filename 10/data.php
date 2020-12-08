@@ -6,7 +6,10 @@ $ulozeneClanky = "clanky.txt";
 $ulozenePocitadlo = "pocitadlo.txt";
 
 // načtení článků
-$clanky = unserialize(base64_decode(file_get_contents($ulozeneClanky)));
+$clanky = [];
+if (file_exists($ulozeneClanky)) {
+    $clanky = unserialize(base64_decode(file_get_contents($ulozeneClanky)));
+}
 
 // načtení počítadla
 if (file_exists($ulozenePocitadlo) == false) {
