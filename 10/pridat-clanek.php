@@ -2,6 +2,13 @@
 require 'data.php';
 require 'header.php';
 
+// pokud není přihlášený nějaký uživatel, tak mu nedovolíme editaci
+if (!isset($_SESSION['uzivatel'])) {
+    echo '<div class="alert alert-danger mt-2" role="alert">Nemáte oprávnění vytvářet nebo editovat články.</div>';
+    require 'footer.php';
+    exit;
+}
+
 // defaultní hodnoty
 $clanek = [
   "id"    => "",

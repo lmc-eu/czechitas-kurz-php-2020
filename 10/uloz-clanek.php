@@ -1,4 +1,9 @@
-<?php
+<?php session_start();
+
+// pokud není přihlášený nějaký uživatel, tak mu nedovolíme akci
+if (!isset($_SESSION['uzivatel'])) {
+    die("Nepřihlášený uživatel!");
+}
 if (empty($_POST["nazev"])) {
     die("Chybí název!");
 }

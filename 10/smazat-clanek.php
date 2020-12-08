@@ -5,6 +5,10 @@ if (!isset($_GET["id"])) {
     die("Chybí id!");
 }
 
+if (!isset($_SESSION['uzivatel'])) {
+    die("Nemáš právo smazat článek!");
+}
+
 unset($clanky[$_GET["id"]]);
 
 $clankyProUlozeni = base64_encode(serialize($clanky));
